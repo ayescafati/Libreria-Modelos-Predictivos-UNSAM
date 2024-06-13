@@ -6,7 +6,7 @@ El objetivo de este proyecto es desarrollar una librería que nos permita crear 
 
 ## Introducción
 
-Este proyecto implementa un clasificador basado en árboles de decisión y un bosque aleatorio en Python. Utilizamos el algoritmo C4.5, una mejora del algoritmo ID3, para construir los árboles de decisión. Este clasificador puede manejar tanto atributos continuos como discretos y proporciona predicciones para un conjunto de datos de prueba.
+Este proyecto implementa un clasificador basado en árboles de decisión y un Random Forest en Python. Utilizamos el algoritmo C4.5, una mejora del algoritmo ID3, para construir los árboles de decisión. Este clasificador puede manejar tanto atributos continuos como discretos y proporciona predicciones para un conjunto de datos de prueba.
 
 ## Árbol de Decisión
 
@@ -29,7 +29,7 @@ El uso de bagging en nuestro Random Forest contribuye fuertemente a mitigar el r
 
 Random Forest es una técnica de ensamble que utiliza múltiples árboles de decisión entrenados sobre diferentes subconjuntos de datos y características. La predicción final se obtiene mediante la votación mayoritaria (para clasificación) o el promedio (para regresión) de las predicciones individuales de los árboles.
 
-# Construcción del Bosque Aleatorio
+# Construcción del Random Forest
 
 ## Bootstrapping
 1. **Bootstrapping**: Realizamos un muestreo con reemplazo del conjunto de datos de entrenamiento para cada árbol. Esto se implementa en el método `entrenar` de la clase `RandomForest`.
@@ -44,11 +44,11 @@ Random Forest es una técnica de ensamble que utiliza múltiples árboles de dec
 
 El código del proyecto se divide en varios módulos y clases, cada uno con funciones específicas:
 
-- **main.py**: Script principal que carga los datos, entrena los modelos y realiza predicciones utilizando el bosque aleatorio.
+- **main.py**: Script principal que carga los datos, entrena los modelos y realiza predicciones utilizando el Random Forest.
   
 - **arbol_decision.py**: Define la estructura y el entrenamiento de un árbol de decisión individual utilizando el algoritmo C4.5. Contiene la clase `ArbolDecision`.
 
-- **random_forest.py**: Implementa la clase `RandomForest` que construye y maneja múltiples árboles de decisión para formar un bosque aleatorio. Este archivo es fundamental para el entrenamiento y la predicción con bosques aleatorios.
+- **random_forest.py**: Implementa la clase `RandomForest` que construye y maneja múltiples árboles de decisión para formar un Random Forest. Este archivo es fundamental para el entrenamiento y la predicción con bosques aleatorios.
 
 - **funciones.py**: Contiene funciones auxiliares como `registrar`, utilizadas para el registro de mensajes durante el entrenamiento y la evaluación del modelo.
 
