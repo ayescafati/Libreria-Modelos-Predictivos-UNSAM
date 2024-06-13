@@ -29,26 +29,35 @@ El uso de bagging en nuestro Random Forest contribuye fuertemente a mitigar el r
 
 Random Forest es una técnica de ensamble que utiliza múltiples árboles de decisión entrenados sobre diferentes subconjuntos de datos y características. La predicción final se obtiene mediante la votación mayoritaria (para clasificación) o el promedio (para regresión) de las predicciones individuales de los árboles.
 
-### Construcción del Bosque
+# Construcción del Bosque Aleatorio
 
-1. *Bootstrapping*: Realizamos un muestreo con reemplazo del conjunto de datos de entrenamiento para cada árbol. Esto se implementa en el método entrenar de la clase RandomForest.
-2. *Selección Aleatoria de Características*: En cada división del árbol, consideramos un subconjunto aleatorio de características. Esto se implementa en el método ajustar de RandomForest.
-3. *Combinación de Predicciones*: Combinamos las predicciones de todos los árboles del bosque para obtener la predicción final. Esto se implementa en el método predecir de la clase RandomForests.
+## Bootstrapping
+1. **Bootstrapping**: Realizamos un muestreo con reemplazo del conjunto de datos de entrenamiento para cada árbol. Esto se implementa en el método `entrenar` de la clase `RandomForest`.
 
-## Implementación
+## Selección Aleatoria de Características
+2. **Selección Aleatoria de Características**: En cada división del árbol, consideramos un subconjunto aleatorio de características. Esto se implementa en el método `entrenar` de `RandomForest`, donde se selecciona un número aleatorio de características para cada árbol.
 
-La implementación del proyecto se divide en varios módulos, cada uno con responsabilidades específicas:
+## Combinación de Predicciones
+3. **Combinación de Predicciones**: Combinamos las predicciones de todos los árboles del bosque para obtener la predicción final. Esto se implementa en el método `__call__` de la clase `RandomForest`, donde se obtiene la moda de las predicciones de los árboles y se calcula la confianza promedio de las predicciones correctas.
 
-- main.py: Script principal que carga los datos, entrena los modelos y realiza predicciones.
-- c45.py: Implementa el algoritmo C4.5 para la construcción del árbol de decisión.
-- clasificadora_arbol_decision.py: Define el clasificador de árbol de decisión utilizando el algoritmo C4.5.
-- impresora_arboles.py: Proporciona funciones para imprimir árboles de decisión y bosques aleatorios.
-- lectora_datos.py: Contiene una función para cargar datos desde un archivo CSV.
-- random_forest.py: Implementa el bosque aleatorio, construyendo y combinando múltiples árboles de decisión.
+# Implementación
 
-## Conclusión
+El código del proyecto se divide en varios módulos y clases, cada uno con funciones específicas:
 
-Este proyecto proporciona una implementación básica pero funcional de un clasificador basado en árboles de decisión y bosques aleatorios, utilizando el algoritmo C4.5. La modularidad del código permite futuras extensiones, como el soporte para problemas de regresión y la inclusión de más hiperparámetros configurables. Este enfoque asegura que la librería sea flexible y escalable, adaptándose a diversas necesidades de predicción en el campo del aprendizaje automático.
+- **main.py**: Script principal que carga los datos, entrena los modelos y realiza predicciones utilizando el bosque aleatorio.
+  
+- **arbol_decision.py**: Define la estructura y el entrenamiento de un árbol de decisión individual utilizando el algoritmo C4.5. Contiene la clase `ArbolDecision`.
+
+- **random_forest.py**: Implementa la clase `RandomForest` que construye y maneja múltiples árboles de decisión para formar un bosque aleatorio. Este archivo es fundamental para el entrenamiento y la predicción con bosques aleatorios.
+
+- **funciones.py**: Contiene funciones auxiliares como `registrar`, utilizadas para el registro de mensajes durante el entrenamiento y la evaluación del modelo.
+
+- **ganancia_informacion.py**: Contiene funciones y métodos para calcular la ganancia de información en atributos numéricos y categóricos, utilizados en la construcción de árboles de decisión y bosques aleatorios.
+
+# Conclusión
+
+Este proyecto proporciona una implementación funcional de un clasificador basado en bosques aleatorios utilizando árboles de decisión. La modularidad del código permite ajustar fácilmente hiperparámetros y extenderlo para problemas de clasificación más complejos. Esta estructura facilita futuras extensiones, como la integración de técnicas avanzadas de selección de características o la adaptación a problemas de regresión, garantizando flexibilidad y escalabilidad en la aplicación de aprendizaje automático.
+
 
 ## Referencias
 
