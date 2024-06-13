@@ -4,8 +4,7 @@
 
 # Clasificador de Árbol de Decisión y Bosque Aleatorio
 
-Este proyecto implementa un clasificador de árbol de decisión y un bosque aleatorio en Python, utilizando el algoritmo C4.5 para el árbol de decisión y una implementación simple de bosque aleatorio. El clasificador puede manejar tanto atributos continuos como discretos y proporciona predicciones para un conjunto de datos de prueba.
-
+Este proyecto implementa un clasificador de árbol de decisión y un bosque aleatorio en Python. Utilizamos principalmente el algoritmo ID3 para el árbol de decisión, con extensiones características del C4.5 que permiten el manejo de atributos continuos. Además, hemos desarrollado una implementación básica del bosque aleatorio. Nuestro clasificador puede procesar tanto atributos continuos como discretos, ofreciendo predicciones para conjuntos de datos de prueba.
 
 ## Integrantes
 
