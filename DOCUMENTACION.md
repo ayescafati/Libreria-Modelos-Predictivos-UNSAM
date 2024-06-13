@@ -1,4 +1,4 @@
-# Proyecto: Librería de Modelos Predictivos con Árboles de Decisión y Bosques Aleatorios
+# Proyecto: Librería de Modelos Predictivos con Árboles de Decisión y Random Forest
 
 ## Enunciado del Problema
 
@@ -48,15 +48,15 @@ El código del proyecto se divide en varios módulos y clases, cada uno con func
   
 - **arbol_decision.py**: Define la estructura y el entrenamiento de un árbol de decisión individual utilizando el algoritmo C4.5. Contiene la clase `ArbolDecision`.
 
-- **random_forest.py**: Implementa la clase `RandomForest` que construye y maneja múltiples árboles de decisión para formar un Random Forest. Este archivo es fundamental para el entrenamiento y la predicción con bosques aleatorios.
+- **random_forest.py**: Implementa la clase `RandomForest` que construye y maneja múltiples árboles de decisión para formar un Random Forest. Este archivo es fundamental para el entrenamiento y la predicción con Random Forest
 
 - **funciones.py**: Contiene funciones auxiliares como `registrar`, utilizadas para el registro de mensajes durante el entrenamiento y la evaluación del modelo.
 
-- **ganancia_informacion.py**: Contiene funciones y métodos para calcular la ganancia de información en atributos numéricos y categóricos, utilizados en la construcción de árboles de decisión y bosques aleatorios.
+- **ganancia_informacion.py**: Contiene funciones y métodos para calcular la ganancia de información en atributos numéricos y categóricos, utilizados en la construcción de árboles de decisión y Random Forest.
 
 # Conclusión
 
-Este proyecto proporciona una implementación funcional de un clasificador basado en bosques aleatorios utilizando árboles de decisión. La modularidad del código permite ajustar fácilmente hiperparámetros y extenderlo para problemas de clasificación más complejos. Esta estructura facilita futuras extensiones, como la integración de técnicas avanzadas de selección de características o la adaptación a problemas de regresión, garantizando flexibilidad y escalabilidad en la aplicación de aprendizaje automático.
+Este proyecto proporciona una implementación funcional de un clasificador basado en Random Forest utilizando árboles de decisión. La modularidad del código permite ajustar fácilmente hiperparámetros y extenderlo para problemas de clasificación más complejos. Esta estructura facilita futuras extensiones, como la integración de técnicas avanzadas de selección de características o la adaptación a problemas de regresión, garantizando flexibilidad y escalabilidad en la aplicación de aprendizaje automático.
 
 
 ## Referencias
