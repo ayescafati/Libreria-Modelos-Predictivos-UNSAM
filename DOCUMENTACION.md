@@ -1,8 +1,5 @@
 # Proyecto: Librería de Modelos Predictivos con Árboles de Decisión y Bosques Aleatorios
 
-![Uploading Captura de pantalla 2024-06-13 a la(s) 20.04.43.png…]()
-
-
 ## Enunciado del Problema
 
 El objetivo de este proyecto es desarrollar una librería que nos permita crear modelos predictivos mediante una versión simplificada del ensamble RandomForest. Buscamos entrenar un modelo con un conjunto de datos etiquetados, utilizando técnicas de aprendizaje supervisado, para predecir la variable objetivo. Inicialmente, nos enfocaremos en problemas de clasificación, con la posibilidad de extender la funcionalidad a problemas de regresión en el futuro.
@@ -34,7 +31,7 @@ Random Forest es una técnica de ensamble que utiliza múltiples árboles de dec
 
 ### Construcción del Bosque
 
-1. *Bootstrapping*: Realizamos un muestreo con reemplazo del conjunto de datos de entrenamiento para cada árbol. Esto se implementa en el método ajustar de la clase RandomForests.
+1. *Bootstrapping*: Realizamos un muestreo con reemplazo del conjunto de datos de entrenamiento para cada árbol. Esto se implementa en el método entrenar de la clase RandomForest.
 2. *Selección Aleatoria de Características*: En cada división del árbol, consideramos un subconjunto aleatorio de características. Esto se implementa en el método ajustar de RandomForest.
 3. *Combinación de Predicciones*: Combinamos las predicciones de todos los árboles del bosque para obtener la predicción final. Esto se implementa en el método predecir de la clase RandomForests.
 
