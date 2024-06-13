@@ -1,5 +1,12 @@
 # Proyecto: Librería de Modelos Predictivos con Árboles de Decisión y Bosques Aleatorios
 
+██████╗░░█████╗░███╗░░██╗██████╗░░█████╗░███╗░░░███╗  ███████╗░█████╗░██████╗░███████╗░██████╗████████╗
+██╔══██╗██╔══██╗████╗░██║██╔══██╗██╔══██╗████╗░████║  ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝
+██████╔╝███████║██╔██╗██║██║░░██║██║░░██║██╔████╔██║  █████╗░░██║░░██║██████╔╝█████╗░░╚█████╗░░░░██║░░░
+██╔══██╗██╔══██║██║╚████║██║░░██║██║░░██║██║╚██╔╝██║  ██╔══╝░░██║░░██║██╔══██╗██╔══╝░░░╚═══██╗░░░██║░░░
+██║░░██║██║░░██║██║░╚███║██████╔╝╚█████╔╝██║░╚═╝░██║  ██║░░░░░╚█████╔╝██║░░██║███████╗██████╔╝░░░██║░░░
+╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░░╚════╝░╚═╝░░░░░╚═╝  ╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░
+
 ## Enunciado del Problema
 
 El objetivo de este proyecto es desarrollar una librería que nos permita crear modelos predictivos mediante una versión simplificada del ensamble RandomForest. Buscamos entrenar un modelo con un conjunto de datos etiquetados, utilizando técnicas de aprendizaje supervisado, para predecir la variable objetivo. Inicialmente, nos enfocaremos en problemas de clasificación, con la posibilidad de extender la funcionalidad a problemas de regresión en el futuro.
@@ -18,10 +25,12 @@ Los árboles de decisión son modelos de aprendizaje automático que utilizamos 
 
 El algoritmo ID3 es una metodología que seguimos para construir árboles de decisión mediante los siguientes pasos:
 
-1. *Selección del Atributo*: Utilizamos la entropía y la ganancia de información para seleccionar el atributo que mejor clasifica los datos en cada nivel del árbol.
-2. *División del Conjunto de Datos*: Dividimos el conjunto de datos en subconjuntos basados en los valores del atributo seleccionado.
-3. *Construcción Recursiva del Árbol*: Repetimos los pasos anteriores hasta que se cumple un criterio de parada, como alcanzar nodos puros o una profundidad máxima del árbol.
-4. *Poda del Árbol*: Eliminamos subárboles que no contribuyen significativamente a la precisión del modelo para evitar el sobreajuste.## Random Forest
+1. *Selección del Atributo*: Utilizamos la entropía y la ganancia de información para seleccionar el atributo que mejor clasifica los datos en cada nivel del árbol. Realizamos esto en el modulo `ganancia_informacion.py`.
+2. *División del Conjunto de Datos*: Dividimos el conjunto de datos en subconjuntos basados en los valores del atributo seleccionado. Realizamos esto en el modulo `ganancia_informacion.py`.
+3. *Construcción Recursiva del Árbol*: Repetimos los pasos anteriores hasta que se cumple un criterio de parada, como alcanzar nodos puros o una profundidad máxima del árbol. Realizamos esto en la clas `ArbolDecision`
+4. *Poda del Árbol*: En nuestra implementación del Random Forest, hemos estructurado el proceso de entrenamiento aprovechando técnicas como el bagging y la selección aleatoria de características. Estas estrategias son evidentes en nuestro código, como se observa en la función `obtener_subconjs_validacion_cruzada` del módulo `manejo_datos_csv`, donde dividimos el conjunto de datos para entrenamiento y validación cruzada, así como en la clase RandomForest del archivo random_forest, donde utilizamos el método entrenar que claramente aplica bagging al construir cada árbol con muestras aleatorias del conjunto de entrenamiento.
+
+El uso de bagging en nuestro Random Forest contribuye fuertemente a mitigar el riesgo de sobreajuste. Cada árbol individual dentro del ensemble se entrena con una muestra aleatoria del conjunto de datos, lo cual simplifica su estructura y reduce la tendencia al sobreajuste en comparación con árboles de decisión más profundos y complejos. En lugar de emplear técnicas de poda después del entrenamiento, confiamos en la diversidad y robustez de los árboles generados mediante el bagging y la aleatorización de características. Esta estrategia fortalece la capacidad del modelo para generalizar bien a nuevos datos, como se refleja en las métricas de desempeño obtenidas durante la validación cruzada en nuestro script. Al prescindir de la poda, mantenemos la capacidad predictiva y la eficiencia del algoritmo, asegurando que nuestro Random Forest pueda manejar una variedad de situaciones y conjuntos de datos de manera efectiva.
 
 ### Definición
 
