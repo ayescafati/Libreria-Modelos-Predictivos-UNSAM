@@ -73,6 +73,8 @@ Destacamos la importancia de la modularidad del código, reflejada en la estruct
 1. Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5-32.
 2. Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning, 1(1), 81-106.
 3. Quinlan, J. R. (1993). C4.5: Programs for Machine Learning. Morgan Kaufmann Publishers.
-4. https://uc-r.github.io/regression_trees
-5. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
-6. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
+4. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+5. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+6. https://uc-r.github.io/regression_trees
+7. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
+8. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
