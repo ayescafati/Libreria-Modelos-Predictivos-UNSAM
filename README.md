@@ -1,6 +1,4 @@
-# Libreria-Modelos-Predictivos-UNSAM
-
-# TPI-ALGORITMOS-II
+# Trabajo Práctico Integrador - Algoritmos II - UNSAM
 
 # Librería para Modelos Predictivos con Base en RandomForest
 
