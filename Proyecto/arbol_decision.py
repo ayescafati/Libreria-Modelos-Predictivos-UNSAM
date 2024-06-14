@@ -47,7 +47,7 @@ class ArbolDecision:
         self.es_entrenado = True
 
     def encontrar_atributo_con_mayor_ganancia_info(self, dataset):
-        # Returns the ganancia
+        
 
         mejor_ganancia_atributo = 0
         for atributo in self.atributos_a_usar:
