@@ -55,7 +55,7 @@ class CsvDataset:
                 un_elemento[y] = x
                 funciones.registrar(f"Adding categorical item to {y}")
 
-        assert len(un_elemento) > 1  # Avoid empty
+        assert len(un_elemento) > 1  
 
         return un_elemento
 
@@ -107,7 +107,7 @@ class CsvDataset:
         Por ejemplo, si el conjunto de datos tiene clases como 'perro', 'gato', 'coche', etc., entonces 
         `clases_por_elemento` contendrá algo asi:
 
-        ```python
+        ```
         {
             'perro': [elemento1, elemento2, ...],
             'gato': [elemento3, elemento4, ...],
