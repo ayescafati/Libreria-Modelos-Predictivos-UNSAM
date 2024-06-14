@@ -6,7 +6,7 @@ El objetivo de este proyecto es desarrollar una librería que nos permita crear 
 
 ## Introducción
 
-Este proyecto implementa un clasificador basado en árboles de decisión y un Random Forest en Python. Utilizamos el algoritmo C4.5, una mejora del algoritmo ID3, para construir los árboles de decisión. Este clasificador puede manejar tanto atributos continuos como discretos y proporciona predicciones para un conjunto de datos de prueba.
+Este proyecto implementa un clasificador de árbol de decisión y un bosque aleatorio en Python. Utilizamos principalmente el algoritmo ID3 para el árbol de decisión, con extensiones características del C4.5 que permiten el manejo de atributos continuos. Además, hemos desarrollado una implementación básica del bosque aleatorio. Nuestro clasificador puede procesar tanto atributos continuos como discretos, ofreciendo predicciones aceptables para conjuntos de datos de prueba.
 
 ## Árbol de Decisión
 
