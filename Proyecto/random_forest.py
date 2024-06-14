@@ -11,9 +11,7 @@ class RandomForest:
     entrenado = False
 
     def entrenar(self, dataset, n, cantidad_arboles):
-        # n = number of attributes.
-        # cantidad_arboles = number of trees
-        self.arboles = []
+        
 
         for _ in range(cantidad_arboles):
             bootstrap = dataset.bootstrap()
