@@ -33,7 +33,7 @@ class CsvDataset:
                 lineas = csvfile.readlines()
 
             encabezado = lineas[0].split(',')
-            # Removes double quotes, \n and transforms in lowercase
+            
             self.encabezado = [x.replace('"', '').replace('\n', '').lower() for x in encabezado]
 
             self.items = []
@@ -41,7 +41,7 @@ class CsvDataset:
                 un_elemento = self.linea_a_dict(una_linea)
                 self.items.append(un_elemento)
 
-            assert len(self.items) == len(lineas) - 1  # Asserts everything was added to items
+            assert len(self.items) == len(lineas) - 1  
 
     def linea_a_dict(self, line):
         line = line.split(',')
@@ -121,7 +121,7 @@ class CsvDataset:
         como conjunto de prueba.
 
         '''
-        # n is the index of the val fold
+        
         clases_por_elemento = {}
         for i in self.items:
             if i['class'] not in clases_por_elemento.keys():
