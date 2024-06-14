@@ -72,7 +72,8 @@ def recall(etiquetas_predichas, etiquetas_reales) -> float: # devuelve el valor 
     recalls_por_clase = [ ]
     etiquetas_predichas = np.asarray(etiquetas_predichas)
     etiquetas_reales = np.asarray(etiquetas_reales)
-    for clase in clases_unicas:  # Calculates precision for each class
+    for clase in clases_unicas:  
+
         relevant = etiquetas_reales == clase
         cant_instancias_bien_predichas = 0
         for etiqueta_predicha, etiqueta_real in zip(etiquetas_predichas[relevant], etiquetas_reales[relevant]):
