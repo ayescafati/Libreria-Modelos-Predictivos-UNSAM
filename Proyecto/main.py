@@ -80,7 +80,7 @@ for conjunto_prueba in datasets:
     print("\n", "#"*80, "\n")
 
     # Guardar predicciones para el conjunto de datos de prueba
-    ruta_archivo_predicciones = f'{os.path.splitext(conjunto_prueba.nombre_archivo)[0]}_predictions.csv'
+    ruta_archivo_predicciones = f'{os.path.splitext(conjunto_prueba.nombre_archivo)[0]}_predicciones.csv'
     with open(ruta_archivo_predicciones, mode='w', newline='') as archivo_predicciones:
         escribir_predicciones = csv.writer(archivo_predicciones)
         escribir_predicciones.writerow(['Prediction', 'esperados'])
