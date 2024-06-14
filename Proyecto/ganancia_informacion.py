@@ -4,7 +4,7 @@ import numpy as np
 import math
 
 
-def info(clases):
+def info(clases) -> float:
     '''
     Recibe una lista con las clases y calcula la entropía.
     La entropía es una medida de la incertidumbre en un conjunto de datos.
@@ -14,26 +14,26 @@ def info(clases):
     clases_vals = set(clases)
     sum = 0
 
-    # Para cada valor único en 'clases_vals', calculamos la probabilidad (pi) de que
+    # Para cada valor único en 'clases_vals', calculamos la probabilidad (p_i) de que
     # aparezca ese valor en 'clases', y después sumamos la contribución de ese valor
     # a la entropía total usando la fórmula de la entropía:
-    # Entropía = -sum(pi * log2(pi)) para cada clase en 'clases_vals'
-    for i in clases_vals:
-        pi = clases.count(i) / len(clases)
-        sum += -pi * math.log(pi, 2)
+    # Entropía = -sum(p_i * log2(p_i)) para cada clase en 'clases_vals'
+    for n in clases_vals:
+        pn = clases.count(n) / len(clases)
+        sum += -pn * math.log(pn, 2)
 
     return sum   # Devolvemos la entropía calculada
 
 
-def info_numerica(dataset, attr, division):
-    clase_menor = [x['class'] for x in dataset if x[attr] < division]
-    clase_mayor = [x['class'] for x in dataset if x[attr] > division]
+def info_numerica(dataset, atributo, division) -> float:
+    clase_menor = [x['class'] for x in dataset if x[atributo] < division]
+    clase_mayor = [x['class'] for x in dataset if x[atributo] > division]
 
     return (len(clase_menor) / len(dataset)) * info(clase_menor) + (
                 len(clase_mayor) / len(dataset)) * info(clase_mayor)
 
 
-def calcular_ganancia_info_num(dataset, attr) -> tuple: # devuelve una una tupla que contiene la ganancia de información y el mejor valor de division
+def calcular_ganancia_info_num(dataset, atributo) -> tuple: # devuelve una una tupla que contiene la ganancia de información y el mejor valor de division
     '''
     Calcula la ganancia de información para un atributo numérico en un conjunto de datos.
     La ganancia de información mide cuánto se reduce la incertidumbre sobre la clase
@@ -41,7 +41,7 @@ def calcular_ganancia_info_num(dataset, attr) -> tuple: # devuelve una una tupla
     '''
 
     # Sacamos los valores únicos del atributo en cuestión
-    valores = {x[attr] for x in dataset}  # Crea un conjunto para eliminar duplicados valores = lista(valores). Esto es, para quedarnos con los valores unicos.
+    valores = {x[atributo] for x in dataset}  # Crea un conjunto para eliminar duplicados valores = lista(valores). Esto es, para quedarnos con los valores unicos.
     valores = list(valores)
     if len(valores) == 1:  # Si el atributo es puro (o sea, si tiene un solo valor). No tiene sentido dividirlo
         return 0, None
@@ -50,7 +50,7 @@ def calcular_ganancia_info_num(dataset, attr) -> tuple: # devuelve una una tupla
     divisiones_medias =  [(valor1 + valor2) / 2 for valor1, valor2 in zip(valores[:-1], valores[1:])]
 
     # Calculamos la ganancia de información para cada punto de división
-    ganancias_de_info = [info_numerica(dataset, attr, punto) for punto in divisiones_medias]
+    ganancias_de_info = [info_numerica(dataset, atributo, punto) for punto in divisiones_medias]
 
     # Encontramos el índice de la mejor división (la que tiene la mayor ganancia de información)
     indice_mejor_division = np.argmax(np.asarray(ganancias_de_info))
@@ -61,8 +61,8 @@ def calcular_ganancia_info_num(dataset, attr) -> tuple: # devuelve una una tupla
     information = info(clases)
 
     # Dividimos el conjunto de datos en dos subconjuntos basados en la mejor división encontrada
-    clase_menor = [x['class'] for x in dataset if x[attr] < mejor_valor_division]
-    clase_mayor = [x['class'] for x in dataset if x[attr] > mejor_valor_division]
+    clase_menor = [x['class'] for x in dataset if x[atributo] < mejor_valor_division]
+    clase_mayor = [x['class'] for x in dataset if x[atributo] > mejor_valor_division]
 
     # Calculamos la entropía ponderada de los subconjuntos
     informacion_despues_de_division = (len(clase_menor) / len(dataset)) * info(clase_menor) + (
