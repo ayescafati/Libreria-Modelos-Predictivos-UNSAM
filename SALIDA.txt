@@ -1,0 +1,174 @@
+(base) Peridot-2:TPI-actual ayelenscafati$ /opt/anaconda3/bin/python /Users/ayelenscafati/Desktop/TPI-actual/main.py
+/opt/anaconda3/bin/python /Users/ayelenscafati/Desktop/TPI-actual/main.py
+
+ ######     ##     ##   ##  #####     #####   ##   ##           #######   #####   ######   #######   #####   ######
+  ##  ##   ####    ###  ##   ## ##   ##   ##  ### ###            ##   #  ##   ##   ##  ##   ##   #  ##   ##  # ## #
+  ##  ##  ##  ##   #### ##   ##  ##  ##   ##  #######            ## #    ##   ##   ##  ##   ## #    #          ##
+  #####   ##  ##   ## ####   ##  ##  ##   ##  #######            ####    ##   ##   #####    ####     #####     ##
+  ## ##   ######   ##  ###   ##  ##  ##   ##  ## # ##            ## #    ##   ##   ## ##    ## #         ##    ##
+  ##  ##  ##  ##   ##   ##   ## ##   ##   ##  ##   ##            ##      ##   ##   ##  ##   ##   #  ##   ##    ##
+ #### ##  ##  ##   ##   ##  #####     #####   ##   ##           ####      #####   #### ##  #######   #####    ####
+
+Conjunto de prueba = /Users/ayelenscafati/Desktop/TPI-actual/spambase.csv
+Cantidad de árboles = 150
+Cantidad de filas en el archivo: 4601
+/Users/ayelenscafati/Desktop/TPI-actual/arbol_decision.py:44: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  self.clase_predicha = stats.mode(clases)[0]
+/Users/ayelenscafati/Desktop/TPI-actual/random_forest.py:34: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  moda = stats.mode(votos_de_las_clases)[0][0][0]
+muestra 1
+exactitud: 0.65442
+F1 Score: 0.68788
+muestra 2
+exactitud: 0.65768
+F1 Score: 0.69257
+muestra 3
+exactitud: 0.66138
+F1 Score: 0.69463
+muestra 4
+exactitud: 0.65834
+F1 Score: 0.69309
+muestra 5
+exactitud: 0.65725
+F1 Score: 0.69222
+muestra 6
+exactitud: 0.66529
+F1 Score: 0.69869
+muestra 7
+exactitud: 0.65421
+F1 Score: 0.68978
+muestra 8
+exactitud: 0.66594
+F1 Score: 0.69921
+muestra 9
+exactitud: 0.65312
+F1 Score: 0.68891
+muestra 10
+exactitud: 0.64964
+F1 Score: 0.68613
+Promedio de exactitud entre los subconjuntos: 0.65773
+Promedio del puntaje F1 entre los subconjuntos: 0.69231
+Desviación estándar de la exactitud entre los subconjuntos: 0.00526
+Desviación estándar del puntaje F1 entre los subconjuntos: 0.00435
+
+ ################################################################################ 
+
+Conjunto de prueba = /Users/ayelenscafati/Desktop/TPI-actual/credit.csv
+Cantidad de árboles = 150
+Cantidad de filas en el archivo: 1000
+muestra 1
+exactitud: 0.73500
+F1 Score: 0.65260
+muestra 2
+exactitud: 0.73300
+F1 Score: 0.65517
+muestra 3
+exactitud: 0.73100
+F1 Score: 0.64622
+muestra 4
+exactitud: 0.74600
+F1 Score: 0.69681
+muestra 5
+exactitud: 0.75000
+F1 Score: 0.67688
+muestra 6
+exactitud: 0.74200
+F1 Score: 0.66023
+muestra 7
+exactitud: 0.73900
+F1 Score: 0.68576
+muestra 8
+exactitud: 0.74600
+F1 Score: 0.66848
+muestra 9
+exactitud: 0.73400
+F1 Score: 0.64708
+muestra 10
+exactitud: 0.74000
+F1 Score: 0.67254
+Promedio de exactitud entre los subconjuntos: 0.73960
+Promedio del puntaje F1 entre los subconjuntos: 0.66618
+Desviación estándar de la exactitud entre los subconjuntos: 0.00638
+Desviación estándar del puntaje F1 entre los subconjuntos: 0.01695
+
+ ################################################################################ 
+
+Conjunto de prueba = /Users/ayelenscafati/Desktop/TPI-actual/vertebra-column.csv
+Cantidad de árboles = 150
+Cantidad de filas en el archivo: 310
+muestra 1
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 2
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 3
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 4
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 5
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 6
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 7
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 8
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 9
+exactitud: 0.53548
+F1 Score: 0.61837
+muestra 10
+exactitud: 0.53548
+F1 Score: 0.61837
+Promedio de exactitud entre los subconjuntos: 0.53548
+Promedio del puntaje F1 entre los subconjuntos: 0.61837
+Desviación estándar de la exactitud entre los subconjuntos: 0.00000
+Desviación estándar del puntaje F1 entre los subconjuntos: 0.00000
+
+ ################################################################################ 
+
+Conjunto de prueba = /Users/ayelenscafati/Desktop/TPI-actual/HR_spectral_type.csv
+Cantidad de árboles = 150
+Cantidad de filas en el archivo: 2061
+muestra 1
+exactitud: 0.57982
+F1 Score: 0.63119
+muestra 2
+exactitud: 0.88840
+F1 Score: 0.91128
+muestra 3
+exactitud: 0.85978
+F1 Score: 0.88838
+muestra 4
+exactitud: 0.89423
+F1 Score: 0.91988
+muestra 5
+exactitud: 0.89083
+F1 Score: 0.91595
+muestra 6
+exactitud: 0.87967
+F1 Score: 0.82605
+muestra 7
+exactitud: 0.89859
+F1 Score: 0.92239
+muestra 8
+exactitud: 0.89471
+F1 Score: 0.91799
+muestra 9
+exactitud: 0.89083
+F1 Score: 0.91644
+muestra 10
+exactitud: 0.89180
+F1 Score: 0.83648
+Promedio de exactitud entre los subconjuntos: 0.85687
+Promedio del puntaje F1 entre los subconjuntos: 0.86860
+Desviación estándar de la exactitud entre los subconjuntos: 0.09797
+Desviación estándar del puntaje F1 entre los subconjuntos: 0.09062
+
+ ################################################################################ 
