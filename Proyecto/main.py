@@ -16,7 +16,7 @@ datasets = [CsvDataset(os.path.join(script_dir, "HR_spectral_type.csv")),
             CsvDataset(os.path.join(script_dir, "vertebra-column.csv")),
             CsvDataset(os.path.join(script_dir, "wine.csv"))]
 
-f = open("log.csv", 'w', newline='')
+f = open("registros.csv", 'w', newline='')
 f.write("cantidad_arboles,dataset,exactitud,exactitud_sd,f1,f1_sd\n")
 
 cantidad_arboles = 200
@@ -35,11 +35,11 @@ print(texto)
 
 
 for conjunto_prueba in datasets:
-    # Contar el número de filas del archivo
+    # Contamos el número de filas del archivo
     with open(conjunto_prueba.nombre_archivo, 'r') as file:
         num_filas = sum(1 for line in file) - 1  # Resta 1 para excluir la línea del encabezado
     
-    # Verificar si la cantidad de filas es menor o igual a 18
+    # Vemos si la cantidad de filas es menor o igual a 18
     if num_filas <= 18:
         raise ValueError("El archivo es demasiado corto. Debe tener al menos 18 lineas")
 
