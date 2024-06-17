@@ -78,3 +78,5 @@ Destacamos la importancia de la modularidad del código, reflejada en la estruct
 6. https://uc-r.github.io/regression_trees
 7. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
 8. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
+9. https://www.linkedin.com/advice/3/how-do-you-choose-between-simple-random-stratified-sampling?lang=es&originalSubdomain=es
+10. https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
