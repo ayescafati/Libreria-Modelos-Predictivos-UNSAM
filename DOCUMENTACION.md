@@ -73,10 +73,16 @@ Destacamos la importancia de la modularidad del código, reflejada en la estruct
 1. Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5-32.
 2. Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning, 1(1), 81-106.
 3. Quinlan, J. R. (1993). C4.5: Programs for Machine Learning. Morgan Kaufmann Publishers.
-4. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
-5. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
-6. https://uc-r.github.io/regression_trees
-7. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
-8. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
-9. https://www.linkedin.com/advice/3/how-do-you-choose-between-simple-random-stratified-sampling?lang=es&originalSubdomain=es
-10. https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
+4. Michael A. Nielsen. “Neural Networks and Deep Learning”, Determination Press, 2015.
+5. LeCun, Y., Bengio, Y. & Hinton, G. Deep learning. Nature 521, 436–444 (2015).
+6. Hernández Orallo, Ramírez Quintana, Ferri Ramírez. Introducción a la Minería de Datos. Editorial Pearson – Prentice Hall. 2004
+7. François Chollet. “Deep Learning with Python”, Manning, 2017.
+8. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+9. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+10. https://uc-r.github.io/regression_trees
+11. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
+12. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
+13. https://www.linkedin.com/advice/3/how-do-you-choose-between-simple-random-stratified-sampling?lang=es&originalSubdomain=es
+14. https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
+15. https://medium.com/@ramit.singh.pahwa/micro-macro-precision-recall-and-f-score-44439de1a044
+16. https://es.wikipedia.org/wiki/Matriz_de_confusión
