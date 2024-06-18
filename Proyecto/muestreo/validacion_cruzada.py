@@ -24,4 +24,4 @@ def generar_k_subconjuntos(df, k, tipo_muestreo = 'estratificado', agregar_resta
     elif tipo_muestreo == 'estratificado':
         return estratificacion_de_los_subconjuntos(df, k, agregar_restantes, semilla)
     else:
-        raise Exception("El parametro de muestreo debe ser estratificado o aleatorio.)
+        raise Exception("El parametro de muestreo debe ser estratificado o aleatorio.")
