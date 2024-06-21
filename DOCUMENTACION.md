@@ -14,7 +14,7 @@ Este proyecto implementa un clasificador de árbol de decisión y un bosque alea
 
 Los árboles de decisión son modelos de aprendizaje automático que utilizamos para tareas de clasificación y regresión. Cada nodo interno del árbol representa una pregunta sobre una característica, cada rama representa el resultado de esa pregunta, y cada nodo hoja representa una clasificación o valor de predicción.
 
-##Algoritmo ID3
+## Algoritmo ID3
 
 El algoritmo ID3 se implementa en el código a través de la clase `ArbolDecision`. En esta clase, el método estático entrenar toma un conjunto de datos `df` en forma de matriz, un diccionario de tipos de atributos `tipo_atributos`, y opcionalmente el número de elementos a considerar `numero_elementos`, y devuelve un objeto `ArbolDecision` entrenado. Dentro del método `entrenar`, se realiza la construcción del árbol de decisión utilizando el enfoque del algoritmo ID3, donde se elige el mejor atributo para dividir los datos en cada paso basándose en la ganancia de información. Se ha usado recursividad para construir el árbol de manera eficiente.
 
@@ -27,19 +27,19 @@ En particular, la recursividad se utiliza en la función `_entrenar` de la misma
 
 Random Forest es una técnica de ensamble que utiliza múltiples árboles de decisión entrenados sobre diferentes subconjuntos de datos y características. La predicción final se obtiene mediante la votación mayoritaria (para clasificación) o el promedio (para regresión) de las predicciones individuales de los árboles.
 
-##Construcción del Random Forest
+## Construcción del Random Forest
 
 La construcción del Random Forest se realiza mediante la clase `RandomForest`. El método `entrenar`, de esta clase, agarra un conjunto de datos de entrenamiento `conjunto_entrenamiento`, una lista de atributos `atributos`, el número de árboles `numero_arboles`, y (opcionalmente) el número de atributos a considerar `numero_atributos`, un objeto Pool para procesamiento paralelo pool, y una semilla para la aleatoriedad semilla. Este método utiliza el bootstrapping para generar múltiples conjuntos de datos de entrenamiento y entrena un conjunto de árboles de decisión utilizando la clase ArbolDecision. Luego, retorna un objeto RandomForest con los árboles entrenados.
 
-###Bootstrapping
+### Bootstrapping
 
 La técnica de bootstrapping se implementa en la función `generar_bootstraps` que toma un DataFrame df y un número `numero_muestras` que representa el número de muestras bootstrap  a generar, junto con una semilla para la aleatoriedad semilla. Este método utiliza la función `sample` de pandas para generar los bootstraps a partir del dataset de entrada, con reemplazo y manteniendo el mismo tamaño del dataset original.
 
-###Selección Aleatoria de Características
+### Selección Aleatoria de Características
 
 La selección aleatoria de características se realiza en la función `seleccionar_numero_atributos`, que toma un diccionario de tipos de atributos atributos y un número `numero_atributos` que representa la cantidad de atributos a seleccionar aleatoriamente. Dentro de esta función, se crea una lista de atributos y se selecciona una muestra aleatoria de esta lista, garantizando que se seleccione el número correcto de atributos según la entrada.
 
-###Combinación de Predicciones
+### Combinación de Predicciones
 
 La combinación de predicciones se implementa en el método `predecir` de la clase `RandomForest`. Este método toma una instancia `observaciones` y utiliza cada árbol de decisión entrenado en el Random Forest para realizar una predicción individual. Luego, combina estas predicciones utilizando el voto mayoritario para obtener la predicción final del Random Forest.
 
