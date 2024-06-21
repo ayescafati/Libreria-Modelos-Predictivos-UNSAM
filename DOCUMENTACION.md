@@ -14,76 +14,94 @@ Este proyecto implementa un clasificador de árbol de decisión y un bosque alea
 
 Los árboles de decisión son modelos de aprendizaje automático que utilizamos para tareas de clasificación y regresión. Cada nodo interno del árbol representa una pregunta sobre una característica, cada rama representa el resultado de esa pregunta, y cada nodo hoja representa una clasificación o valor de predicción.
 
-### Algoritmo ID3
+##Algoritmo ID3
 
-El algoritmo ID3 es una metodología que seguimos para construir árboles de decisión mediante los siguientes pasos:
+El algoritmo ID3 se implementa en el código a través de la clase `ArbolDecision`. En esta clase, el método estático entrenar toma un conjunto de datos `df` en forma de matriz, un diccionario de tipos de atributos `tipo_atributos`, y opcionalmente el número de elementos a considerar `numero_elementos`, y devuelve un objeto `ArbolDecision` entrenado. Dentro del método `entrenar`, se realiza la construcción del árbol de decisión utilizando el enfoque del algoritmo ID3, donde se elige el mejor atributo para dividir los datos en cada paso basándose en la ganancia de información. Se ha usado recursividad para construir el árbol de manera eficiente.
 
-1. *Selección del Atributo*: Utilizamos la entropía y la ganancia de información para seleccionar el atributo que mejor clasifica los datos en cada nivel del árbol. Realizamos esto en el modulo `ganancia_informacion.py`.
-2. *División del Conjunto de Datos*: Dividimos el conjunto de datos en subconjuntos basados en los valores del atributo seleccionado. Realizamos esto en el modulo `ganancia_informacion.py`.
-3. *Construcción Recursiva del Árbol*: Repetimos los pasos anteriores hasta que se cumple un criterio de parada, como alcanzar nodos puros o una profundidad máxima del árbol. Realizamos esto en la clas `ArbolDecision`
-4. *Poda del Árbol*: En nuestra implementación del Random Forest, hemos estructurado el proceso de entrenamiento aprovechando técnicas como el bagging y la selección aleatoria de características. Estas estrategias son evidentes en nuestro código, como se observa en la función `obtener_subconjs_validacion_cruzada` del módulo `manejo_datos_csv`, donde dividimos el conjunto de datos para entrenamiento y validación cruzada, así como en la clase RandomForest del archivo random_forest, donde utilizamos el método entrenar que claramente aplica bagging al construir cada árbol con muestras aleatorias del conjunto de entrenamiento. El uso de bagging en nuestro Random Forest contribuye fuertemente a mitigar el riesgo de sobreajuste. Cada árbol individual dentro del ensemble se entrena con una muestra aleatoria del conjunto de datos, lo cual simplifica su estructura y reduce la tendencia al sobreajuste en comparación con árboles de decisión más profundos y complejos. En lugar de emplear técnicas de poda después del entrenamiento, confiamos en la diversidad y robustez de los árboles generados mediante el bagging y la aleatorización de características. Esta estrategia fortalece la capacidad del modelo para generalizar bien a nuevos datos, como se refleja en las métricas de desempeño obtenidas durante la validación cruzada en nuestro script. Al prescindir de la poda, mantenemos la capacidad predictiva y la eficiencia del algoritmo, asegurando que nuestro Random Forest pueda manejar una variedad de situaciones y conjuntos de datos de manera efectiva.
+En particular, la recursividad se utiliza en la función `_entrenar` de la misma clase, `ArbolDecision`. Esta función se encarga de construir el árbol de decisión de manera recursiva, dividiendo el conjunto de datos en subconjuntos basados en el mejor atributo en cada paso.
+
+
+## Random Forest 
 
 ### Definición
 
 Random Forest es una técnica de ensamble que utiliza múltiples árboles de decisión entrenados sobre diferentes subconjuntos de datos y características. La predicción final se obtiene mediante la votación mayoritaria (para clasificación) o el promedio (para regresión) de las predicciones individuales de los árboles.
 
-# Construcción del Random Forest
+##Construcción del Random Forest
 
-## Bootstrapping
-1. **Bootstrapping**: Realizamos un muestreo con reemplazo del conjunto de datos de entrenamiento para cada árbol. Esto se implementa en el método `entrenar` de la clase `RandomForest`.
+La construcción del Random Forest se realiza mediante la clase `RandomForest`. El método `entrenar`, de esta clase, agarra un conjunto de datos de entrenamiento `conjunto_entrenamiento`, una lista de atributos `atributos`, el número de árboles `numero_arboles`, y (opcionalmente) el número de atributos a considerar `numero_atributos`, un objeto Pool para procesamiento paralelo pool, y una semilla para la aleatoriedad semilla. Este método utiliza el bootstrapping para generar múltiples conjuntos de datos de entrenamiento y entrena un conjunto de árboles de decisión utilizando la clase ArbolDecision. Luego, retorna un objeto RandomForest con los árboles entrenados.
 
-## Selección Aleatoria de Características
-2. **Selección Aleatoria de Características**: En cada división del árbol, consideramos un subconjunto aleatorio de características. Esto se implementa en el método `entrenar` de `RandomForest`, donde se selecciona un número aleatorio de características para cada árbol.
+###Bootstrapping
 
-## Combinación de Predicciones
-3. **Combinación de Predicciones**: Combinamos las predicciones de todos los árboles del bosque para obtener la predicción final. Esto se implementa en el método `__call__` de la clase `RandomForest`, donde se obtiene la moda de las predicciones de los árboles y se calcula la confianza promedio de las predicciones correctas.
+La técnica de bootstrapping se implementa en la función `generar_bootstraps` que toma un DataFrame df y un número `numero_muestras` que representa el número de muestras bootstrap  a generar, junto con una semilla para la aleatoriedad semilla. Este método utiliza la función `sample` de pandas para generar los bootstraps a partir del dataset de entrada, con reemplazo y manteniendo el mismo tamaño del dataset original.
 
-# Implementación
+###Selección Aleatoria de Características
 
-El código del proyecto se divide en varios módulos y clases, cada uno con funciones específicas:
+La selección aleatoria de características se realiza en la función `seleccionar_numero_atributos`, que toma un diccionario de tipos de atributos atributos y un número `numero_atributos` que representa la cantidad de atributos a seleccionar aleatoriamente. Dentro de esta función, se crea una lista de atributos y se selecciona una muestra aleatoria de esta lista, garantizando que se seleccione el número correcto de atributos según la entrada.
 
-- **main.py**: Script principal que carga los datos, entrena los modelos y realiza predicciones utilizando el Random Forest.
-  
-- **arbol_decision.py**: Define la estructura y el entrenamiento de un árbol de decisión individual utilizando el algoritmo C4.5. Contiene la clase `ArbolDecision`.
+###Combinación de Predicciones
 
-- **random_forest.py**: Implementa la clase `RandomForest` que construye y maneja múltiples árboles de decisión para formar un Random Forest. Este archivo es fundamental para el entrenamiento y la predicción con Random Forest
+La combinación de predicciones se implementa en el método `predecir` de la clase `RandomForest`. Este método toma una instancia `observaciones` y utiliza cada árbol de decisión entrenado en el Random Forest para realizar una predicción individual. Luego, combina estas predicciones utilizando el voto mayoritario para obtener la predicción final del Random Forest.
 
-- **funciones.py**: Contiene funciones auxiliares como `registrar`, utilizadas para el registro de mensajes durante el entrenamiento y la evaluación del modelo.
+## Matriz de Confusión
 
-- **ganancia_informacion.py**: Contiene funciones y métodos para calcular la ganancia de información en atributos numéricos y categóricos, utilizados en la construcción de árboles de decisión y Random Forest.
+### Definición
 
+Una matriz de confusión es una herramienta que visualiza y resume el rendimiento de un algoritmo clasificador al comparar las predicciones del modelo con las clases reales de un conjunto de datos. Esta matriz desglosa el número de instancias que el modelo ha clasificado correctamente (verdaderos positivos y verdaderos negativos) frente a las instancias que ha clasificado incorrectamente (falsos positivos y falsos negativos). La denominación "matriz de confusión" proviene de su capacidad para mostrar cuánto confunde el modelo las diferentes clases al realizar sus predicciones. 
 
-# Implementación
+### Matriz de Confusión y Evaluación del Modelo
 
-En nuestra implementación del Random Forest, utilizamos la clase `RandomForest` ubicada en `random_forest.py`. Esta clase maneja la creación de un ensemble de árboles de decisión mediante la técnica de bagging. Cada árbol dentro del Random Forest se entrena con un subconjunto aleatorio de datos de entrenamiento, lo cual fomenta la diversidad y robustez del modelo al reducir la correlación entre los árboles individuales. Además, la selección aleatoria de características en cada árbol contribuye a esta diversidad, limitando la dependencia de ciertas variables y mejorando la capacidad de generalización del modelo final.
+Para evaluar el rendimiento de nuestros modelos de aprendizaje automático, implementamos la clase `MatrizConfusion`, que nos permite calcular métricas clave y visualizar la matriz de confusión. La matriz de confusión es una herramienta fundamental en la evaluación de modelos de clasificación, ya que muestra el desempeño del modelo al predecir las clases verdaderas y falsas.
 
-Para evaluar el rendimiento del Random Forest, hemos implementado funciones clave como `calcular_exactitud` y `f1_score` en `funciones.py`. Estas funciones nos permiten medir la precisión y el puntaje F1 del modelo respectivamente, evaluando su capacidad para clasificar conjuntos de datos diversos. Validamos nuestro enfoque mediante técnicas como la validación cruzada, asegurando una evaluación exhaustiva del modelo y fortaleciendo nuestra confianza en su habilidad para manejar la complejidad de los datos y generalizar correctamente a nuevas muestras. Todo esto se logra sin la necesidad de implementar técnicas adicionales de poda post-entrenamiento, evitando así añadir complejidad innecesaria al algoritmo.
+### Componentes de la Clase `MatrizConfusion`
 
-Esta estructura modular y robusta no solo facilita la experimentación con diferentes configuraciones de hiperparámetros, sino que también sienta las bases para futuras extensiones del proyecto, como la integración de técnicas avanzadas de selección de características o la adaptación a problemas de regresión.
+#### Inicialización
 
-# Conclusión
+Al crear una instancia de la clase `MatrizConfusion`, se proporciona un conjunto de resultados de predicción. Estos resultados suelen incluir la clase predicha (`prediccion`) y la clase verdadera (`clase`) para cada instancia en el conjunto de datos. La clase también calcula automáticamente el total de instancias y la cantidad de predicciones correctas.
 
-En este proyecto hemos desarrollado una librería para la creación de modelos predictivos utilizando árboles de decisión y un ensemble simplificado de Random Forest. Desde la definición de los árboles de decisión y el algoritmo ID3 hasta la implementación del Random Forest con técnicas de bagging y selección aleatoria de características, nuestro enfoque ha sido proporcionar una herramienta flexible y eficaz para problemas de clasificación inicialmente, con potencial para expandirse a problemas de regresión en el futuro.
+#### Matriz de Confusión
 
-Destacamos la importancia de la modularidad del código, reflejada en la estructura de nuestros módulos y clases (`arbol_decision.py`, `random_forest.py`, `funciones.py`, `ganancia_informacion.py`), que permite ajustar hiperparámetros con facilidad y explorar nuevas funcionalidades. La evaluación del rendimiento del Random Forest mediante métricas como exactitud y F1 score, junto con técnicas de validación cruzada, le han dando a nuestro modelo la capacidad de generalizar aceptablemente y manejar la complejidad de los datos de manera efectiva.
+La matriz de confusión se genera internamente utilizando la función `pd.crosstab` de pandas. Esta matriz muestra las predicciones realizadas por el modelo frente a las clases verdaderas en forma de una tabla, donde las filas rpresentan las clases verdaderas (`actual`) y las columnas representan las predicciones del modelo (`prediccion`).
+
+#### Métricas de Evaluación
+
+La clase `MatrizConfusion` proporciona una variedad de métodos para calcular métricas de evaluación del modelo:
+
+- **Exactitud (`exactitud`):** Calcula la proporción de predicciones correctas sobre el total de predicciones.
+- **Error (`error`):** Complemento de la exactitud, representa la proporción de predicciones incorrectas.
+- **Precisión (`precision`):** Indica la proporción de predicciones positivas correctas respecto a todas las predicciones positivas.
+- **Recall (`recalls`):** Muestra la proporción de instancias positivas que el modelo identifica correctamente.
+- **Especificidad (`especificidad`):** Representa la proporción de instancias negativas que el modelo identifica correctamente.
+
+#### F-scores y Métricas Agregadas
+
+Además de las métricas básicas, la clase `MatrizConfusion` calcula F-scores para diferentes valores de beta (`b`) que nos permite ajustar el equilibrio entre precisión y recall. Luego, proporciona métricas agregadas como el promedio de recall (`macro_recall`), precisión (`macro_precision`), especificidad (`macro_especificidad`), y F-score (`macro_f_score`) para evaluar el desempeño general del modelo.
+
+### Visualización y Análisis
+
+La clase `MatrizConfusion` incluye el método `mostrar`, para visualizar la matriz de confusión y proporcionarnos las métricas de evaluación junto con información detallada sobre el rendimiento nuestros modelo. Estas capacidades nos facilitan el análisis exhaustivo del desempeño del modelo en términos de aciertos y errores en la predicción de clases positivas y negativas, lo que es fundamental para la toma de decisiones informadas sobre la calidad del modelo y posibles mejoras a implementar.
+
+## Conclusión
+
+En este proyecto, hemos desarrollado una librería para la creación de modelos predictivos utilizando árboles de decisión y una versión simplificada de Random Forest. Desde la definición de los árboles de decisión y un algoritmo ID3 mejorado, hasta la implementación de Random Forest con técnicas de bagging y selección aleatoria de características, nuestro enfoque ha sido proporcionar una herramienta flexible y eficaz para problemas de clasificación inicialmente, con el potencial de expandirse a problemas de regresión en el futuro.
+
+La modularidad del código, reflejada en la estructura de nuestros módulos y clases, junto con la evaluación del rendimiento del Random Forest mediante métricas y la técnica de validación cruzada, han dotado a nuestro modelo de la capacidad de generalizar de manera aceptable y de manejar la complejidad de los datos de manera efectiva.
 
 
 ## Referencias
 
-1. Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5-32.
+1. Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, and Jonathan Taylor - An Introduction to Statistical Learning with Python (2023).
 2. Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning, 1(1), 81-106.
-3. Quinlan, J. R. (1993). C4.5: Programs for Machine Learning. Morgan Kaufmann Publishers.
-4. Michael A. Nielsen. “Neural Networks and Deep Learning”, Determination Press, 2015.
+3. Michael A. Nielsen. “Neural Networks and Deep Learning”, Determination Press, 2015.
+4. François Chollet. “Deep Learning with Python”, Manning, 2017.
 5. LeCun, Y., Bengio, Y. & Hinton, G. Deep learning. Nature 521, 436–444 (2015).
 6. Hernández Orallo, Ramírez Quintana, Ferri Ramírez. Introducción a la Minería de Datos. Editorial Pearson – Prentice Hall. 2004
-7. François Chollet. “Deep Learning with Python”, Manning, 2017.
-8. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
-9. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
-10. https://uc-r.github.io/regression_trees
-11. https://www.hbs.edu/research-computing-services/resources/compute-cluster/running-jobs/scaling-work.aspx
-12. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
-13. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
+7. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
+8. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+9. https://www.hbs.edu/research-computing-services/resources/compute-cluster/running-jobs/scaling-work.aspx
+10. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
+11.  https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
+12. https://www.ibm.com/topics/confusion-matrix
 14. https://www.linkedin.com/advice/3/how-do-you-choose-between-simple-random-stratified-sampling?lang=es&originalSubdomain=es
-15. https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
-16. https://medium.com/@ramit.singh.pahwa/micro-macro-precision-recall-and-f-score-44439de1a044
-17. https://es.wikipedia.org/wiki/Matriz_de_confusión
+15.  https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
+16.   https://medium.com/@ramit.singh.pahwa/micro-macro-precision-recall-and-f-score-44439de1a044
