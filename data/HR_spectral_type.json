@@ -1,0 +1,9 @@
+{
+    "Temperature": "numerico",
+    "L": "numerico",
+    "R": "numerico",
+    "M_A": "numerico",
+    "stellar_type": "numerico",
+    "spectral_class": "nominal"
+    
+}
