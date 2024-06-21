@@ -1,4 +1,5 @@
-==================================================
+(base) Peridot-2:TP ALGO II (CORRECCIONES) ayelenscafati$ /opt/anaconda3/bin/python "/Users/ayelenscafati/Desktop/TP ALGO II (CORRECCIONES)/main.py"
+==========================================================================================
 Resultados para HR_spectral_type:
 Parámetros usados: 
  Cantidad de Subconjuntos: 5 
@@ -97,10 +98,10 @@ Macro F-score (ß = 0.5): 0.839
         F-score (ß = 0.5) por clase white: 0.735
         F-score (ß = 0.5) por clase yellow-white: 1.000
         F-score (ß = 0.5) por clase yellowish: 0.938
-Tiempo total de procesamiento: 1.756 segundos
-==================================================
+Tiempo total de procesamiento: 1.463 segundos
+==========================================================================================
 Predicciones guardadas en 'Predicciones/HR_spectral_type_predicciones.csv'
-==================================================
+==========================================================================================
 Resultados para credit:
 Parámetros usados: 
  Cantidad de Subconjuntos: 5 
@@ -127,10 +128,10 @@ Macro F-score (ß = 1): 0.631
 Macro F-score (ß = 0.5): 0.643
         F-score (ß = 0.5) por clase bad: 0.503
         F-score (ß = 0.5) por clase good: 0.783
-Tiempo total de procesamiento: 7.716 segundos
-==================================================
+Tiempo total de procesamiento: 8.519 segundos
+==========================================================================================
 Predicciones guardadas en 'Predicciones/credit_predicciones.csv'
-==================================================
+==========================================================================================
 Resultados para spambase:
 Parámetros usados: 
  Cantidad de Subconjuntos: 5 
@@ -151,10 +152,10 @@ Macro F-score (ß = 1): 1.000
         F-score (ß = 1) por clase 1.0: 1.000
 Macro F-score (ß = 0.5): 1.000
         F-score (ß = 0.5) por clase 1.0: 1.000
-Tiempo total de procesamiento: 0.072 segundos
-==================================================
+Tiempo total de procesamiento: 0.124 segundos
+==========================================================================================
 Predicciones guardadas en 'Predicciones/spambase_predicciones.csv'
-==================================================
+==========================================================================================
 Resultados para wine:
 Parámetros usados: 
  Cantidad de Subconjuntos: 5 
@@ -187,10 +188,10 @@ Macro F-score (ß = 0.5): 0.965
         F-score (ß = 0.5) por clase 1.0: 0.961
         F-score (ß = 0.5) por clase 2.0: 0.982
         F-score (ß = 0.5) por clase 3.0: 0.952
-Tiempo total de procesamiento: 0.890 segundos
-==================================================
+Tiempo total de procesamiento: 1.063 segundos
+==========================================================================================
 Predicciones guardadas en 'Predicciones/wine_predicciones.csv'
-==================================================
+==========================================================================================
 Resultados para measurements:
 Parámetros usados: 
  Cantidad de Subconjuntos: 5 
@@ -223,6 +224,6 @@ Macro F-score (ß = 0.5): 0.758
         F-score (ß = 0.5) por clase 1.0: 0.633
         F-score (ß = 0.5) por clase 2.0: 0.711
         F-score (ß = 0.5) por clase 3.0: 0.930
-Tiempo total de procesamiento: 0.937 segundos
-==================================================
+Tiempo total de procesamiento: 1.373 segundos
+==========================================================================================
 Predicciones guardadas en 'Predicciones/measurements_predicciones.csv'
