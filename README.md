@@ -8,7 +8,7 @@ Este proyecto implementa un clasificador de árbol de decisión y un bosque alea
 
 ## Integrantes
 
-- Ayelén Luján Scafati
-- Bautista Turri
-- Federico Llanes
+- Ayelén Luján Scafati (alscafati@estudiantes.unsam.edu.ar)
+- Bautista Turri (bturri@estudiantes.unsam.edu.ar)
+- Federico Llanes (fllanes@estudiantes.unsam.edu.ar)
   
