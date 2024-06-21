@@ -1,3 +1,4 @@
+################ BLOQUE DE IMPORTACIONES ################
 from multiprocessing import Pool
 import pandas as pd
 import numpy as np
@@ -9,6 +10,7 @@ from metricas.matriz_confusion import MatrizConfusion
 from util.funcionalidades import cargar_datos, cargar_atributos, guardar_resultados
 from muestreo import generar_k_subconjuntos, dividir_entrenamiento_y_pruebas
 from modelos.random_forest import RandomForest
+########################################################
 
 def procesar_dataset(nombre_dataset, ruta_dataset, ruta_atributos, semilla, cardinal_k_subconjuntos, numero_arboles, nivel_verbosidad, paralelizar):
     datos = cargar_datos(ruta_dataset)
@@ -55,12 +57,11 @@ def procesar_dataset(nombre_dataset, ruta_dataset, ruta_atributos, semilla, card
     final_matriz_confusion = MatrizConfusion(pd.concat(resultados_totales))
     tiempo_final_total = time.time()
 
-
     final_matriz_confusion.mostrar(nivel_verbosidad=(nivel_verbosidad > 0))
     tiempo_de_ejecucion = tiempo_final_total - tiempo_inicio_total
     print(f"Tiempo total de procesamiento: {tiempo_de_ejecucion:.3f} segundos")
 
-    carpeta_predicciones = "Predicciones"
+    carpeta_predicciones = "predicciones"
     if not os.path.exists(carpeta_predicciones):
         os.makedirs(carpeta_predicciones)
 

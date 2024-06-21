@@ -1,6 +1,8 @@
+################ BLOQUE DE IMPORTACIONES ################
 from typing import List, Tuple, Union
 from numba import jit
 import numpy as np
+#########################################################
 
 
 @jit(nopython = True)

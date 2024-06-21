@@ -1,6 +1,8 @@
+################ BLOQUE DE IMPORTACIONES ################
 from typing import List
 import pandas as pd
 import numpy as np
+#######################################################
 
 
 class MatrizConfusion:
@@ -61,7 +63,6 @@ class MatrizConfusion:
         fnegativos = self.falsos_negativos()
         recalls = vpositivos / (vpositivos + fnegativos)
         return recalls.rename_axis('Recall')
-
 
     def especificidad(self: object) -> pd.Series:  # capacidad de nuestro estimador para discriminar los casos positivos, de los negativos
         vnegativos = self.verdaderos_negativos()
@@ -133,4 +134,3 @@ class MatrizConfusion:
             if nivel_verbosidad:
                 for clase, valor in self.f_score(b).items():
                     print(f"\tF-score (ß = {b}) por clase {clase}: {valor:.3f}")
-

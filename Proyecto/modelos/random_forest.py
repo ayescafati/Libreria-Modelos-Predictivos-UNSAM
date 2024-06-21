@@ -1,14 +1,16 @@
 from collections import Counter
+################ BLOQUE DE IMPORTACIONES ################
 from numpy.random import randint as entero_aleatorio
-
-from muestreo import generar_bootstraps
-from modelos import ArbolDecision, predecir as arbol_predecir
-
 import pandas as pd
 from typing import List, Optional, Tuple, Any
 from random import randint
 from collections import Counter
 from multiprocessing.pool import Pool
+
+
+from muestreo import generar_bootstraps
+from modelos import ArbolDecision, predecir as arbol_predecir
+#######################################################
 
 
 class RandomForest:

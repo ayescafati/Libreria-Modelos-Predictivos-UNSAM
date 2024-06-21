@@ -1,7 +1,9 @@
+################ BLOQUE DE IMPORTACIONES ################
 from typing import Dict, Union, List, Tuple
 import random
 import numpy as np
 from informacion import info_atributos
+########################################################
 
 
 class ArbolDecision:
