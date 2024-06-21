@@ -55,10 +55,6 @@ def procesar_dataset(nombre_dataset, ruta_dataset, ruta_atributos, semilla, card
     final_matriz_confusion = MatrizConfusion(pd.concat(resultados_totales))
     tiempo_final_total = time.time()
 
-    #print("=" * 90)
-    #print(f"Resultados para {nombre_dataset}:")
-    #print(
-        #f"Parámetros usados: \n Cantidad de Subconjuntos: {cardinal_k_subconjuntos} \n Número de árboles: {numero_arboles} \n Número de atributos: {atributos_por_division} \n Semilla: {semilla}")
 
     final_matriz_confusion.mostrar(nivel_verbosidad=(nivel_verbosidad > 0))
     tiempo_de_ejecucion = tiempo_final_total - tiempo_inicio_total
