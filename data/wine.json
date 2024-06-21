@@ -1,0 +1,15 @@
+{
+    "Alcohol": "numerico",
+    "Malic_acid": "numerico",
+    "Ash": "numerico",
+    "Alcalinity_of_ash": "numerico",
+    "Magnesium": "numerico",
+    "Total_phenols": "numerico",
+    "Flavanoids": "numerico",
+    "Nonflavanoid_phenols": "numerico",
+    "Proanthocyanins": "numerico",
+    "Color_intensity": "numerico",
+    "Hue": "numerico",
+    "OD280%2FOD315_of_diluted_wines": "numerico",
+    "Proline": "numerico"
+}

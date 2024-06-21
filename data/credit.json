@@ -1,0 +1,23 @@
+{
+    "checking_status": "nominal",
+    "duration": "numerico",
+    "credit_history": "nominal",
+    "purpose": "nominal",
+    "credit_amount": "numerico",
+    "savings_status": "nominal",
+    "employment": "nominal",
+    "installment_commitment": "numerico",
+    "personal_status": "nominal",
+    "other_parties": "nominal",
+    "residence_since": "numerico",
+    "property_magnitude": "nominal",
+    "age": "numerico",
+    "other_payment_plans": "nominal",
+    "housing": "nominal",
+    "existing_credits": "numerico",
+    "resident_type": "nominal",
+    "num_dependents": "numerico",
+    "own_telephone": "nominal",
+    "foreign_worker": "nominal"
+
+}
