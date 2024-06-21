@@ -1,5 +1,12 @@
 ==========================================================================================
-Random Forest 1 tiempo de creación: 0.870 segundos
+Resultados para HR_spectral_type:
+Parámetros usados: 
+ Cantidad de Subconjuntos: 5 
+ Número de árboles: 10 
+ Número de atributos: 2 
+ Semilla: 5
+==========================================================================================
+Random Forest 1 tiempo de creación: 1.295 segundos
 --------------------------------------------------
 Exactitud: 0.961 [Total: 102, Correcto: 98]
 Macro Recall: 0.750
@@ -9,7 +16,7 @@ Macro F-score (ß = 2): 0.952
 Macro F-score (ß = 1): 0.953
 Macro F-score (ß = 0.5): 0.959
 ==========================================================================================
-Random Forest 2 tiempo de creación: 0.152 segundos
+Random Forest 2 tiempo de creación: 0.162 segundos
 --------------------------------------------------
 Exactitud: 0.929 [Total: 99, Correcto: 92]
 Macro Recall: 0.838
@@ -19,7 +26,7 @@ Macro F-score (ß = 2): 0.947
 Macro F-score (ß = 1): 0.931
 Macro F-score (ß = 0.5): 0.927
 ==========================================================================================
-Random Forest 3 tiempo de creación: 0.288 segundos
+Random Forest 3 tiempo de creación: 0.156 segundos
 --------------------------------------------------
 Exactitud: 0.968 [Total: 95, Correcto: 92]
 Macro Recall: 0.727
@@ -29,7 +36,7 @@ Macro F-score (ß = 2): 0.987
 Macro F-score (ß = 1): 0.971
 Macro F-score (ß = 0.5): 0.959
 ==========================================================================================
-Random Forest 4 tiempo de creación: 0.223 segundos
+Random Forest 4 tiempo de creación: 0.159 segundos
 --------------------------------------------------
 Exactitud: 0.926 [Total: 95, Correcto: 88]
 Macro Recall: 0.747
@@ -39,7 +46,7 @@ Macro F-score (ß = 2): 0.881
 Macro F-score (ß = 1): 0.857
 Macro F-score (ß = 0.5): 0.843
 ==========================================================================================
-Random Forest 5 tiempo de creación: 0.228 segundos
+Random Forest 5 tiempo de creación: 0.173 segundos
 --------------------------------------------------
 Exactitud: 0.966 [Total: 89, Correcto: 86]
 Macro Recall: 0.852
@@ -48,13 +55,6 @@ Macro Especificidad: 0.994
 Macro F-score (ß = 2): 0.989
 Macro F-score (ß = 1): 0.983
 Macro F-score (ß = 0.5): 0.977
-==========================================================================================
-Resultados para HR_spectral_type:
-Parámetros usados: 
- Cantidad de Subconjuntos: 5 
- Número de árboles: 10 
- Número de atributos: 2 
- Semilla: 5
 --------------------------------------------------
 Exactitud: 0.950 [Total: 480, Correcto: 456]
 Macro Recall: 0.768
@@ -147,11 +147,18 @@ Macro F-score (ß = 0.5): 0.839
         F-score (ß = 0.5) por clase white: 0.735
         F-score (ß = 0.5) por clase yellow-white: 1.000
         F-score (ß = 0.5) por clase yellowish: 0.938
-Tiempo total de procesamiento: 2.607 segundos
+Tiempo total de procesamiento: 2.514 segundos
 ==========================================================================================
 Predicciones guardadas en 'Predicciones/HR_spectral_type_predicciones.csv'
 ==========================================================================================
-Random Forest 1 tiempo de creación: 1.604 segundos
+Resultados para credit:
+Parámetros usados: 
+ Cantidad de Subconjuntos: 5 
+ Número de árboles: 10 
+ Número de atributos: 4 
+ Semilla: 5
+==========================================================================================
+Random Forest 1 tiempo de creación: 1.743 segundos
 --------------------------------------------------
 Exactitud: 0.730 [Total: 200, Correcto: 146]
 Macro Recall: 0.631
@@ -161,7 +168,7 @@ Macro F-score (ß = 2): 0.632
 Macro F-score (ß = 1): 0.640
 Macro F-score (ß = 0.5): 0.656
 ==========================================================================================
-Random Forest 2 tiempo de creación: 1.325 segundos
+Random Forest 2 tiempo de creación: 1.447 segundos
 --------------------------------------------------
 Exactitud: 0.715 [Total: 200, Correcto: 143]
 Macro Recall: 0.606
@@ -171,7 +178,7 @@ Macro F-score (ß = 2): 0.606
 Macro F-score (ß = 1): 0.612
 Macro F-score (ß = 0.5): 0.629
 ==========================================================================================
-Random Forest 3 tiempo de creación: 1.195 segundos
+Random Forest 3 tiempo de creación: 1.325 segundos
 --------------------------------------------------
 Exactitud: 0.730 [Total: 200, Correcto: 146]
 Macro Recall: 0.655
@@ -181,7 +188,7 @@ Macro F-score (ß = 2): 0.657
 Macro F-score (ß = 1): 0.661
 Macro F-score (ß = 0.5): 0.668
 ==========================================================================================
-Random Forest 4 tiempo de creación: 1.270 segundos
+Random Forest 4 tiempo de creación: 1.304 segundos
 --------------------------------------------------
 Exactitud: 0.745 [Total: 200, Correcto: 149]
 Macro Recall: 0.651
@@ -191,7 +198,7 @@ Macro F-score (ß = 2): 0.654
 Macro F-score (ß = 1): 0.662
 Macro F-score (ß = 0.5): 0.679
 ==========================================================================================
-Random Forest 5 tiempo de creación: 1.181 segundos
+Random Forest 5 tiempo de creación: 1.292 segundos
 --------------------------------------------------
 Exactitud: 0.675 [Total: 200, Correcto: 135]
 Macro Recall: 0.573
@@ -200,13 +207,6 @@ Macro Especificidad: 0.573
 Macro F-score (ß = 2): 0.572
 Macro F-score (ß = 1): 0.575
 Macro F-score (ß = 0.5): 0.582
-==========================================================================================
-Resultados para credit:
-Parámetros usados: 
- Cantidad de Subconjuntos: 5 
- Número de árboles: 10 
- Número de atributos: 4 
- Semilla: 5
 --------------------------------------------------
 Exactitud: 0.719 [Total: 1000, Correcto: 719]
 Macro Recall: 0.623
@@ -227,11 +227,18 @@ Macro F-score (ß = 1): 0.631
 Macro F-score (ß = 0.5): 0.643
         F-score (ß = 0.5) por clase bad: 0.503
         F-score (ß = 0.5) por clase good: 0.783
-Tiempo total de procesamiento: 7.263 segundos
+Tiempo total de procesamiento: 7.772 segundos
 ==========================================================================================
 Predicciones guardadas en 'Predicciones/credit_predicciones.csv'
 ==========================================================================================
-Random Forest 1 tiempo de creación: 0.010 segundos
+Resultados para spambase:
+Parámetros usados: 
+ Cantidad de Subconjuntos: 5 
+ Número de árboles: 10 
+ Número de atributos: 8 
+ Semilla: 5
+==========================================================================================
+Random Forest 1 tiempo de creación: 0.008 segundos
 --------------------------------------------------
 Exactitud: 1.000 [Total: 20, Correcto: 20]
 Macro Recall: 1.000
@@ -241,7 +248,7 @@ Macro F-score (ß = 2): 1.000
 Macro F-score (ß = 1): 1.000
 Macro F-score (ß = 0.5): 1.000
 ==========================================================================================
-Random Forest 2 tiempo de creación: 0.010 segundos
+Random Forest 2 tiempo de creación: 0.009 segundos
 --------------------------------------------------
 Exactitud: 1.000 [Total: 20, Correcto: 20]
 Macro Recall: 1.000
@@ -261,7 +268,7 @@ Macro F-score (ß = 2): 1.000
 Macro F-score (ß = 1): 1.000
 Macro F-score (ß = 0.5): 1.000
 ==========================================================================================
-Random Forest 4 tiempo de creación: 0.008 segundos
+Random Forest 4 tiempo de creación: 0.009 segundos
 --------------------------------------------------
 Exactitud: 1.000 [Total: 20, Correcto: 20]
 Macro Recall: 1.000
@@ -271,7 +278,7 @@ Macro F-score (ß = 2): 1.000
 Macro F-score (ß = 1): 1.000
 Macro F-score (ß = 0.5): 1.000
 ==========================================================================================
-Random Forest 5 tiempo de creación: 0.007 segundos
+Random Forest 5 tiempo de creación: 0.009 segundos
 --------------------------------------------------
 Exactitud: 1.000 [Total: 19, Correcto: 19]
 Macro Recall: 1.000
@@ -280,13 +287,6 @@ Macro Especificidad: nan
 Macro F-score (ß = 2): 1.000
 Macro F-score (ß = 1): 1.000
 Macro F-score (ß = 0.5): 1.000
-==========================================================================================
-Resultados para spambase:
-Parámetros usados: 
- Cantidad de Subconjuntos: 5 
- Número de árboles: 10 
- Número de atributos: 8 
- Semilla: 5
 --------------------------------------------------
 Exactitud: 1.000 [Total: 99, Correcto: 99]
 Macro Recall: 1.000
@@ -305,7 +305,14 @@ Tiempo total de procesamiento: 0.220 segundos
 ==========================================================================================
 Predicciones guardadas en 'Predicciones/spambase_predicciones.csv'
 ==========================================================================================
-Random Forest 1 tiempo de creación: 0.143 segundos
+Resultados para wine:
+Parámetros usados: 
+ Cantidad de Subconjuntos: 5 
+ Número de árboles: 10 
+ Número de atributos: 4 
+ Semilla: 5
+==========================================================================================
+Random Forest 1 tiempo de creación: 0.145 segundos
 --------------------------------------------------
 Exactitud: 0.946 [Total: 37, Correcto: 35]
 Macro Recall: 0.956
@@ -315,7 +322,7 @@ Macro F-score (ß = 2): 0.951
 Macro F-score (ß = 1): 0.947
 Macro F-score (ß = 0.5): 0.945
 ==========================================================================================
-Random Forest 2 tiempo de creación: 0.148 segundos
+Random Forest 2 tiempo de creación: 0.257 segundos
 --------------------------------------------------
 Exactitud: 0.972 [Total: 36, Correcto: 35]
 Macro Recall: 0.976
@@ -325,7 +332,7 @@ Macro F-score (ß = 2): 0.974
 Macro F-score (ß = 1): 0.972
 Macro F-score (ß = 0.5): 0.970
 ==========================================================================================
-Random Forest 3 tiempo de creación: 0.278 segundos
+Random Forest 3 tiempo de creación: 0.176 segundos
 --------------------------------------------------
 Exactitud: 1.000 [Total: 36, Correcto: 36]
 Macro Recall: 1.000
@@ -335,7 +342,7 @@ Macro F-score (ß = 2): 1.000
 Macro F-score (ß = 1): 1.000
 Macro F-score (ß = 0.5): 1.000
 ==========================================================================================
-Random Forest 4 tiempo de creación: 0.153 segundos
+Random Forest 4 tiempo de creación: 0.147 segundos
 --------------------------------------------------
 Exactitud: 0.943 [Total: 35, Correcto: 33]
 Macro Recall: 0.952
@@ -345,7 +352,7 @@ Macro F-score (ß = 2): 0.948
 Macro F-score (ß = 1): 0.943
 Macro F-score (ß = 0.5): 0.941
 ==========================================================================================
-Random Forest 5 tiempo de creación: 0.148 segundos
+Random Forest 5 tiempo de creación: 0.139 segundos
 --------------------------------------------------
 Exactitud: 0.971 [Total: 34, Correcto: 33]
 Macro Recall: 0.976
@@ -354,13 +361,6 @@ Macro Especificidad: 0.986
 Macro F-score (ß = 2): 0.975
 Macro F-score (ß = 1): 0.973
 Macro F-score (ß = 0.5): 0.972
-==========================================================================================
-Resultados para wine:
-Parámetros usados: 
- Cantidad de Subconjuntos: 5 
- Número de árboles: 10 
- Número de atributos: 4 
- Semilla: 5
 --------------------------------------------------
 Exactitud: 0.966 [Total: 178, Correcto: 172]
 Macro Recall: 0.972
@@ -387,11 +387,18 @@ Macro F-score (ß = 0.5): 0.965
         F-score (ß = 0.5) por clase 1.0: 0.961
         F-score (ß = 0.5) por clase 2.0: 0.982
         F-score (ß = 0.5) por clase 3.0: 0.952
-Tiempo total de procesamiento: 1.164 segundos
+Tiempo total de procesamiento: 1.166 segundos
 ==========================================================================================
 Predicciones guardadas en 'Predicciones/wine_predicciones.csv'
 ==========================================================================================
-Random Forest 1 tiempo de creación: 0.149 segundos
+Resultados para measurements:
+Parámetros usados: 
+ Cantidad de Subconjuntos: 5 
+ Número de árboles: 10 
+ Número de atributos: 2 
+ Semilla: 5
+==========================================================================================
+Random Forest 1 tiempo de creación: 0.135 segundos
 --------------------------------------------------
 Exactitud: 0.806 [Total: 62, Correcto: 50]
 Macro Recall: 0.761
@@ -401,7 +408,7 @@ Macro F-score (ß = 2): 0.763
 Macro F-score (ß = 1): 0.770
 Macro F-score (ß = 0.5): 0.781
 ==========================================================================================
-Random Forest 2 tiempo de creación: 0.150 segundos
+Random Forest 2 tiempo de creación: 0.128 segundos
 --------------------------------------------------
 Exactitud: 0.758 [Total: 62, Correcto: 47]
 Macro Recall: 0.706
@@ -411,7 +418,7 @@ Macro F-score (ß = 2): 0.706
 Macro F-score (ß = 1): 0.706
 Macro F-score (ß = 0.5): 0.707
 ==========================================================================================
-Random Forest 3 tiempo de creación: 0.157 segundos
+Random Forest 3 tiempo de creación: 0.272 segundos
 --------------------------------------------------
 Exactitud: 0.806 [Total: 62, Correcto: 50]
 Macro Recall: 0.756
@@ -421,7 +428,7 @@ Macro F-score (ß = 2): 0.756
 Macro F-score (ß = 1): 0.757
 Macro F-score (ß = 0.5): 0.759
 ==========================================================================================
-Random Forest 4 tiempo de creación: 0.138 segundos
+Random Forest 4 tiempo de creación: 0.135 segundos
 --------------------------------------------------
 Exactitud: 0.806 [Total: 62, Correcto: 50]
 Macro Recall: 0.800
@@ -431,7 +438,7 @@ Macro F-score (ß = 2): 0.784
 Macro F-score (ß = 1): 0.773
 Macro F-score (ß = 0.5): 0.776
 ==========================================================================================
-Random Forest 5 tiempo de creación: 0.158 segundos
+Random Forest 5 tiempo de creación: 0.142 segundos
 --------------------------------------------------
 Exactitud: 0.839 [Total: 62, Correcto: 52]
 Macro Recall: 0.767
@@ -440,13 +447,6 @@ Macro Especificidad: 0.923
 Macro F-score (ß = 2): 0.768
 Macro F-score (ß = 1): 0.770
 Macro F-score (ß = 0.5): 0.773
-==========================================================================================
-Resultados para measurements:
-Parámetros usados: 
- Cantidad de Subconjuntos: 5 
- Número de árboles: 10 
- Número de atributos: 2 
- Semilla: 5
 --------------------------------------------------
 Exactitud: 0.803 [Total: 310, Correcto: 249]
 Macro Recall: 0.758
@@ -473,6 +473,6 @@ Macro F-score (ß = 0.5): 0.758
         F-score (ß = 0.5) por clase 1.0: 0.633
         F-score (ß = 0.5) por clase 2.0: 0.711
         F-score (ß = 0.5) por clase 3.0: 0.930
-Tiempo total de procesamiento: 1.244 segundos
+Tiempo total de procesamiento: 1.210 segundos
 ==========================================================================================
 Predicciones guardadas en 'Predicciones/measurements_predicciones.csv'
