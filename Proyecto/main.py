@@ -12,9 +12,9 @@ if __name__ == "__main__":
         ("measurements", "data/measurements.csv", "data/measurements.json"),
     ]
 
-    semilla = 5
+    semilla = 42
     cardinal_k_subconjuntos = 5
-    numero_arboles = 10
+    numero_arboles = 100
     nivel_verbosidad = 2
     paralelizar = False
 
