@@ -80,9 +80,10 @@ Destacamos la importancia de la modularidad del código, reflejada en la estruct
 8. https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
 9. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
 10. https://uc-r.github.io/regression_trees
-11. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
-12. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
-13. https://www.linkedin.com/advice/3/how-do-you-choose-between-simple-random-stratified-sampling?lang=es&originalSubdomain=es
-14. https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
-15. https://medium.com/@ramit.singh.pahwa/micro-macro-precision-recall-and-f-score-44439de1a044
-16. https://es.wikipedia.org/wiki/Matriz_de_confusión
+11. https://www.hbs.edu/research-computing-services/resources/compute-cluster/running-jobs/scaling-work.aspx
+12. https://cienciadedatos.net/documentos/33_arboles_de_prediccion_bagging_random_forest_boosting#Ejemplo_regresi%C3%B3n
+13. https://tomaszgolan.github.io/introduction_to_machine_learning/markdown/introduction_to_machine_learning_02_dt/introduction_to_machine_learning_02_dt/#information-gain
+14. https://www.linkedin.com/advice/3/how-do-you-choose-between-simple-random-stratified-sampling?lang=es&originalSubdomain=es
+15. https://www.geeksforgeeks.org/no-quality-assurance-noqa-in-python/
+16. https://medium.com/@ramit.singh.pahwa/micro-macro-precision-recall-and-f-score-44439de1a044
+17. https://es.wikipedia.org/wiki/Matriz_de_confusión
